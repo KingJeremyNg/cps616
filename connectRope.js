@@ -31,5 +31,5 @@ function connectRope(arr) {
     return cost;
 }
 
-arr = [1, 2, 3, 4];
+arr = [1, 2, 3, 4, 5];
 console.log(connectRope(arr));
