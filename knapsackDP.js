@@ -14,7 +14,7 @@ To solve the above problem, I used an iterative bottom-up dynamic programming ap
  * @param {number[]} values
  * @param {number[]} weights
  * @param {number} capacity
- * @return {number}
+ * @returns {number}
  */
 function knapsackDP(values, weights, capacity) {
     let n = values.length;
@@ -28,14 +28,16 @@ function knapsackDP(values, weights, capacity) {
                 dp[i][j] = dp[i - 1][j];            // throw away knapsack completely and
             }                                       // keep successful knapsack from previous row
             else {
-                // Add the new item into a knapsack and compare its total value to previous knapsack in DP array
+                // Add the new item into a knapsack and compare its total value to above knapsack in DP array
                 let newKnapsack = dp[i - 1][j - weights[i - 1]] + values[i - 1];
                 dp[i][j] = Math.max(dp[i - 1][j], newKnapsack);
             }
         }
     }
-    dp.forEach((element) => console.log(...element));
-    return dp[n][capacity];     // Return the last item of DP array
+    dp.forEach((row) => {
+        console.log(...row);
+    })
+    return dp[n][capacity];     // The solution is the last element of the dp array
 }
 
 let values = [1, 2, 1, 2, 2];
