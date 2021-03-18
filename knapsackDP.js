@@ -1,5 +1,5 @@
 /*
-CPS 616 Assignment 3 Question 1
+CPS 616 Assignment 4 Question 1
 Jeremy Ng
 500882192
 */
@@ -34,9 +34,9 @@ function knapsackDP(values, weights, capacity) {
             }
         }
     }
-    dp.forEach((row) => {
-        console.log(...row);
-    })
+    // dp.forEach((row) => {
+    //     console.log(...row);
+    // })
     return dp[n][capacity];     // The solution is the last element of the dp array
 }
 
